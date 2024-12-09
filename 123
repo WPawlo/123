@@ -74,8 +74,6 @@
 
        private void bubble_sort(int[] arr)
        {
-           Stopwatch watch = new Stopwatch();
-           watch.Start();
            int n = arr.Length;
            for (int i = 0; i < n; i++)
            {
@@ -89,14 +87,10 @@
                    }
                }
            }
-           watch.Stop();
-           label5.Text = "Czas trwania sortowania: " + watch.ElapsedTicks + " ms";
        }
 
        private void insert_sort(int[] arr)
        {
-           Stopwatch watch = new Stopwatch();
-           watch.Start();
            int n = arr.Length;
            for (int i = 1; i < n; i++)
            {
@@ -109,14 +103,10 @@
                }
                arr[popr + 1] = temp;
            }
-           watch.Stop();
-           label5.Text = "Czas trwania sortowania: " + watch.ElapsedTicks + " ms";
        }
 
        private void selection_sort(int[] arr)
        {
-           Stopwatch watch = new Stopwatch();
-           watch.Start();
            int n = arr.Length;
            for (int i = 0; i < n - 1; i++)
            {
@@ -132,14 +122,10 @@
                arr[iMin] = arr[i];
                arr[i] = temp;
            }
-           watch.Stop();
-           label5.Text = "Czas trwania sortowania: " + watch.ElapsedTicks + " ms";
        }
 
        private void counting_sort(int[] arr)
        {
-           Stopwatch watch = new Stopwatch();
-           watch.Start();
            int n = arr.Length;
            int max = arr[0];
            for (int i = 1; i < n; i++)
@@ -165,8 +151,6 @@
                    count[i]--;
                }
            }
-           watch.Stop();
-           label5.Text = "Czas trwania sortowania: " + watch.ElapsedTicks + " ms";
        }
 
        private void merging(int[] arr, int l, int m, int r)
@@ -216,8 +200,6 @@
 
        private void merge_sort(int[] arr, int l, int r)
        {
-           Stopwatch watch = new Stopwatch();
-           watch.Start();
            if (l < r)
            {
                int m = (l + r) / 2;
@@ -225,14 +207,10 @@
                merge_sort(arr, m + 1, r);
                merging(arr, l, m, r);
            }
-           watch.Stop();
-           label5.Text = "Czas trwania sortowania: " + watch.ElapsedTicks + " ms";
        }
 
        private void quick_sort(int[] arr, int l, int r)
        {
-           Stopwatch watch = new Stopwatch();
-           watch.Start();
            if (l < r)
            {
                int p = arr[r];
@@ -253,7 +231,5 @@
                quick_sort(arr, l, i);
                quick_sort(arr, i + 2, r);
            }
-           watch.Stop();
-           label5.Text = "Czas trwania sortowania: " + watch.ElapsedTicks + " ms";
        }
    }
